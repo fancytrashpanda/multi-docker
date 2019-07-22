@@ -20,4 +20,4 @@ after_success:
   - docker push kaitlinsickles/multi-client
   - docker push kaitlinsickles/multi-nginx
   - docker push kaitlinsickles/multi-server
-  - docker push kaitlinsickles/multi-worker
+  - docker push zksickles/multi-worker
