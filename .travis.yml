@@ -9,7 +9,7 @@ script:
   - docker run -e CI=true kaitlinsickles/react-test npm test
 
 after_success:
-  - docker build -t kaitlinsickles/multi-client ./client
+  - docker build -t zksickles/multi-client ./client
   - docker build -t kaitlinsickles/multi-nginx ./nginx
   - docker build -t kaitlinsickles/multi-server ./server
   - docker build -t kaitlinsickles/multi-worker ./worker
@@ -17,7 +17,7 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   
   # Take those images and push them to docker hub
-  - docker push kaitlinsickles/multi-client
+  - docker push zksickles/multi-client
   - docker push kaitlinsickles/multi-nginx
   - docker push kaitlinsickles/multi-server
   - docker push kaitlinsickles/multi-worker
