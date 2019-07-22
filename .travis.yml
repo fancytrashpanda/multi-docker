@@ -10,14 +10,14 @@ script:
 
 after_success:
   - docker build -t zksickles/multi-client ./client
-  - docker build -t kaitlinsickles/multi-nginx ./nginx
-  - docker build -t kaitlinsickles/multi-server ./server
-  - docker build -t kaitlinsickles/multi-worker ./worker
+  - docker build -t zksickles/multi-nginx ./nginx
+  - docker build -t zksickles/multi-server ./server
+  - docker build -t zksickles/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   
   # Take those images and push them to docker hub
   - docker push zksickles/multi-client
-  - docker push kaitlinsickles/multi-nginx
-  - docker push kaitlinsickles/multi-server
-  - docker push kaitlinsickles/multi-worker
+  - docker push zksickles/multi-nginx
+  - docker push zksickles/multi-server
+  - docker push zksickles/multi-worker
